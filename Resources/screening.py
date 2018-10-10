@@ -26,13 +26,12 @@ def LessThan(x, *n):
 
 # Cleanup functions
 
-def uniqValues(*n):
-    '''Returns a tuple with unique values'''
-    return tuple(set(n))
-    
-def noMultiple(*n):
-    '''Returns a tuple where member values are not multiples of each other'''
-    members = list(n)
+def uniqMembers(*n):
+    '''
+    Returns a tuple where member values are unique and does not 
+    include multiples of each other.
+    '''
+    members = list(set(n))
     members.sort()
     multiples = list()
     for denominator in members:
