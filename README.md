@@ -1,6 +1,5 @@
 # MathCues
 Solving Project Euler problem sets
--------------------------------------------------------------------------
 
 This repository contains practice solutions for mathematical and computer 
 science related problems found at projecteuler.net
