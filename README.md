@@ -12,12 +12,6 @@ yourself, and the neat new things you'll learn along the way!
 (Seriously, I feel enlightened after each earnest attempt.)
 
 
-Each problem will be maintained in its own directory; however, where 
-common code becomes shared among problems, it will be moved into a 
-"common directory", from where it will be imported to the required 
-problem. The same applies for common resources.
-
-
 The problems presented generally asks a solution for specific parameters; 
 where possible, a general solution will be attempted to solve for all 
 instances of the problem.
