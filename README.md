@@ -2,9 +2,9 @@
 Solving Project Euler problem sets
 
 This repository contains practice solutions for mathematical and computer 
-science related problems found at projecteuler.net
+science related problems found at [projecteuler.net](https://projecteuler.net)
 
-<--If on GitHub-->
+
 The (attempted) solution files are not intended to be used as an easy 
 cheat to gain rep on the site; it is purely for reference. Besides, just 
 getting the answers for free takes the fun out of discovering it for 
