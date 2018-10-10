@@ -15,8 +15,6 @@ Brute Force function in the Second Attempt. However, for values larger than
 Algebraic method, with the same parameters, it is calculated in mere seconds.
 '''
 
-import itertools
-# from itertools import combinations as combine
 
 ################
 # First Attempt
@@ -30,8 +28,8 @@ import itertools
 # For integers yielded by dividing numbers from 1 to X(excluding)
 # through multiple N, add each integer to total Sum.
 
-def sum_of_multiples_bf(x, *n):
-    '''Sum of multiples of N, for multiples of all numbers less than X'''
+def sum_of_mult_bf(x, *n):
+    '''Sum of multiples of N, for range of positive numbers less than X'''
 
     x, n = verify_and_clean_input(x, *n)
 
@@ -55,14 +53,14 @@ def sum_of_multiples_bf(x, *n):
 # multiples, so we subtract 1 before doing the calculation.
 # Repeat for each multiple N and add to total Sum.
 #
-# Note: This basic method of determining the number of multiples
-#       within a given range and the subsequent sum was outsourced
-#       to the generator in Attempt 2. Temptation to replace the
-#       body of this function with the generator was deferred to
-#       preserving the code for historical purposes.
+# Note: The basic method of determining the number of multiples of
+#       a single integer within a given range and the subsequent 
+#       sum was outsourced to the generator in Attempt 2. Temptation
+#       to replace the body of this function with the generator was
+#       deferred to preserving the code for historical purposes.
 
-def sum_of_multiples_al(x, *n):
-    '''Sum of multiples of N, for multiples of all numbers less than X'''
+def sum_of_mult_al(x, *n):
+    '''Sum of multiples of N, for range of positive numbers less than X'''
 
     x, n = verify_and_clean_input(x, *n)
 
@@ -77,6 +75,9 @@ def sum_of_multiples_al(x, *n):
 
 #################
 # Second Attempt
+#
+# Here we take into account that each integer leading up to X must only 
+# be counted once.
 #################
 
 #                   Brute Force Method
@@ -85,10 +86,9 @@ def sum_of_multiples_al(x, *n):
 # through multiple N, and add integer to total Sum.
 #
 # Note: Here the loop order merely becomes switched opposed to Attempt One
-#
 
-def sum_of_multiples_bf2(x, *n):
-    '''Sum of multiples of N, for multiples of all numbers less than X'''
+def sum_of_mult_bf2(x, *n):
+    '''Sum of multiples of N, for range of positive numbers less than X'''
 
     x, n = verify_and_clean_input(x, *n)
     
@@ -109,14 +109,13 @@ def sum_of_multiples_bf2(x, *n):
 # possible Multiples together, but multiplying each even combination by
 # negative one. This can be demonstrated as:
 #
-# where f(x) is the sum of the multiples of X for a given range, and
+# where f(n) is the sum of all the multiples of n within a given range, and
 # where a,b,c is the given multiples, then
 #
 # Total Sum = f(a) + f(b) + f(c) - f(ab) - f(ac) - f(bc) + f(abc)
-#
 
-def sum_of_multiples_al2(x, *n):
-    '''Sum of multiples of N, for multiples of all numbers less than X'''
+def sum_of_mult_al2(x, *n):
+    '''Sum of multiples of N, for range of positive numbers less than X'''
 
     x, n = verify_and_clean_input(x, *n)
 
@@ -138,16 +137,15 @@ def sum_of_multiples_al2(x, *n):
     return Sum
 
 #########################
-#   Supporting Functions
+# Supporting Functions
 #########################
 
-def combine(items, n):
-    '''Returns an iterable that yields unique combinations of size N of items'''
-    return itertools.combinations(items, n)
-
+# import unique combinator
+# returns an iterator that outputs integer tuples of specified length
+from itertools import combinations as combine
 
 def product(iterobj):
-    '''Returns the product of all items in an iterable'''
+    '''Returns the product of all items in an iterable object.'''
     product = 1
     for i in iterobj:
         product = product * i
