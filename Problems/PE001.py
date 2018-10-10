@@ -159,33 +159,16 @@ def sum_generator(base=None, result=None):
         quot = (base-1)//multiple
         result = multiple*quot*(quot+1)//2
 
-
+# import verification functions
+from screening import isNumber, GreaterThan, uniqMembers
+        
 def verify_and_clean_input(x, *n):
-    '''Returns valid X and unique, non-multiple values of N
-
-Verifies X and N are integers greater than 1.'''
+    '''Screening function'''    
+    isNumber(x)
+    isNumber(n)
+    GreaterThan(1, x)   # Verify x is greater than 1
+    GreaterThan(1, n)   # Verify n members is greater than 1
     
-    if not x > 1:
-        raise Exception('x must be greater than one')
-    if n == tuple():
-        raise Exception('Must include atleast one positive multiple')
-    for item in n:
-        if type(item) != type(int()) and type(item) != type(float()):
-            raise Exception('Please enter or unpack numbers only')
-        if not item > 1:
-            raise Exception('Multiples must be greater than 1')
-    
-    multiples = list(set(n))
-    multiples.sort()
-    garbage = list()
-    for alpha in multiples:
-        for beta in multiples:
-            if beta == alpha:
-                continue
-            if beta % alpha == 0:
-                garbage.append(beta)
-
-    for trash in set(garbage):
-        multiples.remove(trash)
+    n = uniqMembers(n)  # return non-multiple unique values for n
             
-    return x, tuple(multiples)
+    return x, n
