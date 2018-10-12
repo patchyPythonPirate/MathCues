@@ -2,8 +2,8 @@
 Project Euler - Problem 1
 https://projecteuler.net/problem=1
 
-Author: C. Koorzen
-GitHub: PatchyPythonPirate
+Author: F.C. Koorzen
+GitHub: patchyPythonPirate
 
 The original challenge tasked participants to solve the puzzle with parameters 
 X = 1000 and N = 3, 5 only. I wanted to create a function that could solve the 
